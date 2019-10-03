@@ -27,6 +27,6 @@ public class TimeServerResourceIT {
         Response response = this.tut.request(MediaType.TEXT_PLAIN).get();
         assertThat(response.getStatus(), is(200));
         String payload = response.readEntity(String.class);
-        assertTrue(payload.startsWith("Time :"));
+        assertTrue(payload.startsWith("Time : "));
     }
 }
