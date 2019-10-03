@@ -12,11 +12,11 @@ public class TimeServerResource {
     @GET
     public String time() {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd. MMMM yyyy, hh:mm:ss");
         String formatDateTime = now.format(formatter);
 
        /*
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM dd,yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm:ss");
         String formatDateTime;
         if (now.getHour() > 12){
             formatDateTime = now.format(formatter) + "PM";
