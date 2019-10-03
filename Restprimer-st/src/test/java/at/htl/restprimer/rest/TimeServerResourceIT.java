@@ -1,5 +1,6 @@
 package at.htl.restprimer.rest;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -16,11 +17,10 @@ public class TimeServerResourceIT {
     private Client client;
     private WebTarget tut;
 
-    @BeforeAll
+    @Before
     public void initClient(){
         this.client = ClientBuilder.newClient();
         this.tut = this.client.target("http://localhost:8080/restprimer/rs/time");
-
     }
     @Test
     public void fetchTime(){
